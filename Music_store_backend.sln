@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{4E311039-7F54-4E39-BA54-778E4D2232D1}"
+	ProjectSection(SolutionItems) = preProject
+		Music_store_backend\Application\Music_Store_backend.Application.xml = Music_store_backend\Application\Music_Store_backend.Application.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1478A094-6903-46C1-9F73-33763ECAE816}
+	EndGlobalSection
+EndGlobal

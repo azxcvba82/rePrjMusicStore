@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Music_Store_backend.xml</DocumentationFile>
+    <NoWarn>1701;1702;1705;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Domain\Authorization\Secret\Repository\**" />
+    <Compile Remove="Infrastructure\Dapper\**" />
+    <Compile Remove="Middlewares\**" />
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="Domain\Authorization\Secret\Repository\**" />
+    <Content Remove="Infrastructure\Dapper\**" />
+    <Content Remove="Middlewares\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="Domain\Authorization\Secret\Repository\**" />
+    <EmbeddedResource Remove="Infrastructure\Dapper\**" />
+    <EmbeddedResource Remove="Middlewares\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="Domain\Authorization\Secret\Repository\**" />
+    <None Remove="Infrastructure\Dapper\**" />
+    <None Remove="Middlewares\**" />
+    <None Remove="wwwroot\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Application\Music_Store_backend.Application.xml" />
+    <None Remove="Application\Music_store_backend.xml" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="BeetleX.Redis.NetCore31" Version="0.9.4" />
+    <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.5.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+    <PackageReference Include="MySql.Data" Version="8.0.20" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.2" />
+    <PackageReference Include="NSwag.AspNetCore" Version="13.6.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.1.30" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.5.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Controllers\Line\" />
+    <Folder Include="Controllers\ShoppingCart\" />
+    <Folder Include="Controllers\Statistic\" />
+  </ItemGroup>
+
+
+</Project>

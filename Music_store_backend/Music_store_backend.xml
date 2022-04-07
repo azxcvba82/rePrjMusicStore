@@ -1,0 +1,456 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Music_store_backend</name>
+    </assembly>
+    <members>
+        <member name="P:Music_store_backend.Application.Authorization.Jwt.Dto.JwtAuthorizationDto.Auths">
+            <summary>
+            授权时间
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Jwt.Dto.JwtAuthorizationDto.Expires">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Jwt.Dto.JwtAuthorizationDto.Success">
+            <summary>
+            是否授权成功
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Jwt.Dto.JwtAuthorizationDto.Token">
+            <summary>
+            Token
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Jwt.Dto.JwtAuthorizationDto.UserId">
+            <summary>
+            用户主键
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Jwt.Dto.JwtResponseDto.Access">
+            <summary>
+            访问 Token 值
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Jwt.Dto.JwtResponseDto.Type">
+            <summary>
+            授权类型
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Jwt.Dto.JwtResponseDto.Profile">
+            <summary>
+            个人信息
+            </summary>
+        </member>
+        <member name="T:Music_store_backend.Application.Authorization.Jwt.Dto.Profile">
+            <summary>
+            个人信息
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Jwt.Dto.Profile.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Jwt.Dto.Profile.Auths">
+            <summary>
+            授权时间戳
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Jwt.Dto.Profile.Expires">
+            <summary>
+            过期时间戳
+            </summary>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.IJwtAppService.Create(Music_store_backend.Application.Authorization.Secret.Dto.UserDto)">
+            <summary>
+            新增 Jwt token
+            </summary>
+            <param name="dto">用户信息数据传输对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.IJwtAppService.RefreshAsync(System.String,Music_store_backend.Application.Authorization.Secret.Dto.UserDto)">
+            <summary>
+            刷新 Token
+            </summary>
+            <param name="token">Token</param>
+            <param name="dto">用户信息数据传输对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.IJwtAppService.IsCurrentActiveTokenAsync">
+            <summary>
+            判断当前 Token 是否有效
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.IJwtAppService.DeactivateCurrentAsync">
+            <summary>
+            停用当前 Token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.IJwtAppService.IsActiveAsync(System.String)">
+            <summary>
+            判断 Token 是否有效
+            </summary>
+            <param name="token">Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.IJwtAppService.DeactivateAsync(System.String)">
+            <summary>
+            停用 Token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Music_store_backend.Application.Authorization.Jwt.JwtAppService._tokens">
+            <summary>
+            已授权的 Token 信息集合
+            </summary>
+        </member>
+        <member name="F:Music_store_backend.Application.Authorization.Jwt.JwtAppService._cache">
+            <summary>
+            分布式缓存
+            </summary>
+        </member>
+        <member name="F:Music_store_backend.Application.Authorization.Jwt.JwtAppService._configuration">
+            <summary>
+            配置信息
+            </summary>
+        </member>
+        <member name="F:Music_store_backend.Application.Authorization.Jwt.JwtAppService._httpContextAccessor">
+            <summary>
+            获取 HTTP 请求上下文
+            </summary>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.JwtAppService.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache,Microsoft.AspNetCore.Http.IHttpContextAccessor,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            ctor
+            </summary>
+            <param name="cache"></param>
+            <param name="httpContextAccessor"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.JwtAppService.Create(Music_store_backend.Application.Authorization.Secret.Dto.UserDto)">
+            <summary>
+            新增 Token
+            </summary>
+            <param name="dto">用户信息数据传输对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.JwtAppService.DeactivateAsync(System.String)">
+            <summary>
+            停用 Token
+            </summary>
+            <param name="token">Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.JwtAppService.DeactivateCurrentAsync">
+            <summary>
+            停用当前 Token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.JwtAppService.IsActiveAsync(System.String)">
+            <summary>
+            判断 Token 是否有效
+            </summary>
+            <param name="token">Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.JwtAppService.IsCurrentActiveTokenAsync">
+            <summary>
+            判断当前 Token 是否有效
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.JwtAppService.RefreshAsync(System.String,Music_store_backend.Application.Authorization.Secret.Dto.UserDto)">
+            <summary>
+            刷新 Token
+            </summary>
+            <param name="token">Token</param>
+            <param name="dto">用户信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.JwtAppService.GetKey(System.String)">
+            <summary>
+            设置缓存中过期 Token 值的 key
+            </summary>
+            <param name="token">Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.JwtAppService.GetCurrentAsync">
+            <summary>
+            获取 HTTP 请求的 Token 值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Jwt.JwtAppService.GetExistenceToken(System.String)">
+            <summary>
+            判断是否存在当前 Token
+            </summary>
+            <param name="token">Token</param>
+            <returns></returns>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Secret.Dto.SecretDto.Account">
+            <summary>
+            账号名
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Secret.Dto.SecretDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Secret.Dto.SecretDto.Token">
+            <summary>
+            登录后授权的 Token
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Secret.Dto.UserDto.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Secret.Dto.UserDto.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Secret.Dto.UserDto.Email">
+            <summary>
+            电子邮箱
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Secret.Dto.UserDto.Phone">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Application.Authorization.Secret.Dto.UserDto.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Secret.ISecretAppService.GetCurrentUserAsync(System.String,System.String)">
+            <summary>
+            获取登录用户信息
+            </summary>
+            <param name="account">账户名</param>
+            <param name="password">密码</param>
+            <returns></returns>
+        </member>
+        <member name="F:Music_store_backend.Application.Authorization.Secret.SecretAppService._secret">
+            <summary>
+            领域接口
+            </summary>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Secret.SecretAppService.#ctor(Music_store_backend.Domain.Authorization.Secret.ISecretDomain)">
+            <summary>
+            ctor
+            </summary>
+            <param name="secret"></param>
+        </member>
+        <member name="M:Music_store_backend.Application.Authorization.Secret.SecretAppService.GetCurrentUserAsync(System.String,System.String)">
+            <summary>
+            获取登录用户信息
+            </summary>
+            <param name="account">账户名</param>
+            <param name="password">密码</param>
+            <returns></returns>
+        </member>
+        <member name="F:Music_store_backend.Controllers.v1.SecretController._jwtApp">
+            <summary>
+            Jwt 服务
+            </summary>
+        </member>
+        <member name="F:Music_store_backend.Controllers.v1.SecretController._logger">
+            <summary>
+            日志记录服务
+            </summary>
+        </member>
+        <member name="F:Music_store_backend.Controllers.v1.SecretController._secretApp">
+            <summary>
+            用户服务
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Controllers.v1.SecretController._configuration">
+            <summary>
+            配置信息
+            </summary>
+        </member>
+        <member name="M:Music_store_backend.Controllers.v1.SecretController.#ctor(Microsoft.Extensions.Logging.ILogger{Music_store_backend.Controllers.v1.SecretController},Microsoft.Extensions.Configuration.IConfiguration,Music_store_backend.Application.Authorization.Jwt.IJwtAppService,Music_store_backend.Application.Authorization.Secret.ISecretAppService)">
+            <summary>
+            Ctor
+            </summary>
+            <param name="logger"></param>
+            <param name="configuration"></param>
+            <param name="jwtApp"></param>
+            <param name="secretApp"></param>
+        </member>
+        <member name="M:Music_store_backend.Controllers.v1.SecretController.CancelAccessToken">
+            <summary>
+            停用 Jwt 授权数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Controllers.v1.SecretController.LoginAsync(Music_store_backend.Application.Authorization.Secret.Dto.SecretDto)">
+            <summary>
+            获取 Jwt 授权数据
+            </summary>
+            <param name="dto">授权用户信息</param>
+        </member>
+        <member name="M:Music_store_backend.Controllers.v1.SecretController.RefreshAccessTokenAsync(Music_store_backend.Application.Authorization.Secret.Dto.SecretDto)">
+            <summary>
+            刷新 Jwt 授权数据
+            </summary>
+            <param name="dto">刷新授权用户信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Controllers.v1.ValuesController.Get">
+            <summary>
+            GET请求： api/values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Controllers.v1.ValuesController.Get(System.Int32)">
+            <summary>
+            GET请求： api/values/5
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Controllers.v1.ValuesController.Post(System.String)">
+            <summary>
+            POST请求： api/values
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Music_store_backend.Controllers.v1.ValuesController.Put(System.Int32,System.String)">
+            <summary>
+            PUT请求： api/values/5
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Music_store_backend.Controllers.v1.ValuesController.Delete(System.Int32)">
+            <summary>
+            DELETE请求： api/values/5
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="F:Music_store_backend.Domain.Authorization.Secret.DataAccessService._connectionStr">
+            <summary>
+            連線字串
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Domain.Authorization.Secret.DataAccessService.connectionStr">
+            <summary>
+            全域的資料庫連線字串
+            </summary>
+        </member>
+        <member name="M:Music_store_backend.Domain.Authorization.Secret.ISecretDomain.GetUserForLoginAsync(System.String,System.String)">
+            <summary>
+            根据帐户名、密码获取用户实体信息
+            </summary>
+            <param name="account">账户名</param>
+            <param name="password">密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Domain.Authorization.Secret.SecretDomain.GetUserForLoginAsync(System.String,System.String)">
+            <summary>
+            根据帐户名、密码获取用户实体信息
+            </summary>
+            <param name="account">账户名</param>
+            <param name="password">密码</param>
+            <returns></returns>
+        </member>
+        <member name="T:Music_store_backend.Entities.EntityBase`1">
+            <summary>
+            泛型实体基类
+            </summary>
+            <typeparam name="TPrimaryKey">主键</typeparam>
+        </member>
+        <member name="P:Music_store_backend.Entities.EntityBase`1.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="T:Music_store_backend.Entities.EntityBase">
+            <summary>
+            Guid 类型主键实体基类
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Entities.Permission.IdentityUser.fNickName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Entities.Permission.IdentityUser.fAccount">
+            <summary>
+            账户
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Entities.Permission.IdentityUser.fPassword">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Handlers.PolicyHandler.Schemes">
+            <summary>
+            授权方式（cookie, bearer, oauth, openid）
+            </summary>
+        </member>
+        <member name="F:Music_store_backend.Handlers.PolicyHandler._jwtApp">
+            <summary>
+            jwt 服务
+            </summary>
+        </member>
+        <member name="M:Music_store_backend.Handlers.PolicyHandler.#ctor(Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider,Music_store_backend.Application.Authorization.Jwt.IJwtAppService)">
+            <summary>
+            ctor
+            </summary>
+            <param name="schemes"></param>
+            <param name="jwtApp"></param>
+        </member>
+        <member name="T:Music_store_backend.Handlers.PolicyHandler.Menu">
+            <summary>
+            测试菜单类
+            </summary>
+        </member>
+        <member name="F:Music_store_backend.Infrastructure.Configuration.ConfigurationManager._locker">
+            <summary>
+            加锁防止并发操作
+            </summary>
+        </member>
+        <member name="F:Music_store_backend.Infrastructure.Configuration.ConfigurationManager._instance">
+            <summary>
+            配置实例
+            </summary>
+        </member>
+        <member name="P:Music_store_backend.Infrastructure.Configuration.ConfigurationManager.Config">
+            <summary>
+            配置根节点
+            </summary>
+        </member>
+        <member name="M:Music_store_backend.Infrastructure.Configuration.ConfigurationManager.#ctor">
+            <summary>
+            私有构造函数
+            </summary>
+        </member>
+        <member name="M:Music_store_backend.Infrastructure.Configuration.ConfigurationManager.GetInstance">
+            <summary>
+            获取配置实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Music_store_backend.Infrastructure.Configuration.ConfigurationManager.GetConfig(System.String)">
+            <summary>
+            获取配置信息
+            </summary>
+            <param name="name">配置节点名称</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
